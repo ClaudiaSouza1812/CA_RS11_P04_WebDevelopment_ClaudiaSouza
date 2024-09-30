@@ -10,21 +10,32 @@ function showLoggedIcons() {
 function showSearchTextInput() {
     let form = iconsDiv.querySelector("form");
     let searchIcon = document.querySelector("#searchIcon");
+    let input = iconsDiv.querySelector("input");
 
     searchIcon.addEventListener("click", function () {
-
-        form.style.transition = "width 0.5s ease";
+        
+        input.style.border = "none";
 
         if (form.style.width === "0px" || form.style.width === "") {
             form.style.display = "flex";
-            form.style.width = "300px";
+            setTimeout(() => {
+                form.style.width = "300px";
+            }, 10);
         } else {
             form.style.width = "0px";
-            setDisplayTransition(() => {
+            setTimeout(() => {
                 form.style.display = "none";
             }, 500);
         }
     });
+
+    form.addEventListener("transitionend", function(event) {
+        if (event.propertyName === "width" && form.style.width === "300px") {
+            input.style.border = "solid 1px #aaa";
+        } else {
+            input.style.border = "none";
+        }
+    })
 }
 
 
