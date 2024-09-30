@@ -25,4 +25,16 @@ h1 {
     color: #3C368C;
     text-align: center;
 }
+.headerItens > .divItens {
+    display: flex;
+}
+.headerItens > .divItens > form {
+    display: none;
+}
+.headerItens > div > button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
 
