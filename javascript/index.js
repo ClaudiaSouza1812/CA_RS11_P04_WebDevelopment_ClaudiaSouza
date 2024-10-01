@@ -54,4 +54,4 @@ function showSearchTextInput() {
 
 
 showSearchTextInput();
-//showLoggedIcons();
+showLoggedIcons();
