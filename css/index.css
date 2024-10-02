@@ -280,7 +280,9 @@ hr {
     background-color: #7d7d7d;
 }
 #teamSection {
-    justify-self: center;
+    display: flex;
+    justify-content: center;
+
 }
 #gridTeamSection {
     display: grid;
@@ -288,8 +290,9 @@ hr {
     grid-template-areas: 
     "a b c";
     padding: 0 100px 50px 100px;
-    width: 900px;
-    
+    max-width: 900px;
+    width: 100%;
+    gap: 30px;
 }
 #gridTeamSection > img:nth-child(1) {
     grid-area: a;
