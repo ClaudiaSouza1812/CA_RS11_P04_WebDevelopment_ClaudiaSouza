@@ -355,6 +355,28 @@ hr {
 }
 
 
+#trainingImg01 {
+    position: relative;
+    width: 100%;
+    max-height: 500px;
+}
+#trainingTitle {
+    color: white;
+    font-size: 48px;
+    margin: 0;
+}
+#trainingSubtitle {
+    color: #ccc;
+    font-size: 30px;
+    margin: 10px;
+}
+#trainingText {
+    color: white;
+    font-size: 20px;
+    font-style: italic;
+    margin: 10px;
+    padding-bottom: 20px;
+}
 
 /* 
 

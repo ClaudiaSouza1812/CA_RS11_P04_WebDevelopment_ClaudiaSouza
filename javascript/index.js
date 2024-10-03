@@ -1,11 +1,24 @@
 const url = "http://127.0.0.1:5501/html/index.html";
 const divIconItens = document.querySelector(".headerItens > div:nth-child(2");
-const sliderItens = document.querySelector(".trainingSection > section");
 
-const sliderImg = sliderItens.querySelector("img");
-console.log(sliderImg);
-const sliderTextBox = sliderItens.querySelectorAll("p");
-console.log(sliderTextBox);
+const sliderItens = document.querySelectorAll(".trainingSection");
+const sliderTextBox = document.querySelectorAll(".trainingTextBox > p");
+let actualImage = 1;
+
+function showSliderItens() {
+    setInterval(() => {
+        sliderItens.item(0).innerHTML = `<img id="trainingImg01" src="/img/slider${actualImage}.jpg" alt="">`;
+        /*
+        sliderItens.item(1).innerHTML = `<p id="trainingTitle">${actualImage}</p>`;
+        sliderItens.item(2).innerHTML = `<p id="trainingSubtitle">${actualImage}</p>`;
+        sliderItens.item(3).innerHTML = `<p id="trainingText">${actualImage}</p>`;
+        */
+        actualImage++;
+        if (actualImage > 5) {
+            actualImage = 1;
+        }
+    }, 5000);
+}
 
 function showLoggedIcons() {
     const buttons = divIconItens.querySelectorAll("button"); 
@@ -61,3 +74,4 @@ function showSearchTextInput() {
 
 showSearchTextInput();
 //showLoggedIcons();
+//showSliderItens();
