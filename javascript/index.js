@@ -1,5 +1,11 @@
 const url = "http://127.0.0.1:5501/html/index.html";
 const divIconItens = document.querySelector(".headerItens > div:nth-child(2");
+const sliderItens = document.querySelector(".trainingSection > section");
+
+const sliderImg = sliderItens.querySelector("img");
+console.log(sliderImg);
+const sliderTextBox = sliderItens.querySelectorAll("p");
+console.log(sliderTextBox);
 
 function showLoggedIcons() {
     const buttons = divIconItens.querySelectorAll("button"); 
@@ -54,4 +60,4 @@ function showSearchTextInput() {
 
 
 showSearchTextInput();
-showLoggedIcons();
+//showLoggedIcons();
