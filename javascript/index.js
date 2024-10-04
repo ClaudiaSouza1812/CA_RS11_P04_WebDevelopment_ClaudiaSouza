@@ -1,23 +1,43 @@
+
 const url = "http://127.0.0.1:5501/html/index.html";
 const divIconItens = document.querySelector(".headerItens > div:nth-child(2");
+const sliderItens = document.querySelectorAll(".trainingSection > *");
+let paragraphsData = null;
 
-const sliderItens = document.querySelectorAll(".trainingSection");
-const sliderTextBox = document.querySelectorAll(".trainingTextBox > p");
-let actualImage = 1;
+function getParagraphsData() {
+    return fetch("../Data/Paragraphs.json")
+    .then(response => response.json())
+    .then(data => {
+        paragraphsData = data;
+    })
+    .catch(error => console.log("Error: ", error));
+}
+
+function setSliderItens() {
+    if (!paragraphsData) {
+        console.log("Paragraphs not loaded yet");
+        return;
+    }
+
+    const section = document.querySelector(".trainingSection");
+
+    for (let i = 0; i < 5; i++) {
+        const divSlide = document.createElement("div");
+        divSlide.className = "slide";
+        divSlide.innerHTML =  
+        `<img class="trainingImg" src="/img/slider${i+1}.jpg" alt="">
+        <p class="trainingTitle trainingTitle${i+1}">${paragraphsData.paragraphs[i].title}</p>
+        <p class="trainingSubtitle trainingSubtitle${i+1}">${paragraphsData.paragraphs[i].subtitle}</p>
+        <p class="trainingText trainingText${i+1}">${paragraphsData.paragraphs[i].text}</p>`;
+        section.appendChild(divSlide);
+    } 
+}
 
 function showSliderItens() {
-    setInterval(() => {
-        sliderItens.item(0).innerHTML = `<img id="trainingImg01" src="/img/slider${actualImage}.jpg" alt="">`;
-        /*
-        sliderItens.item(1).innerHTML = `<p id="trainingTitle">${actualImage}</p>`;
-        sliderItens.item(2).innerHTML = `<p id="trainingSubtitle">${actualImage}</p>`;
-        sliderItens.item(3).innerHTML = `<p id="trainingText">${actualImage}</p>`;
-        */
-        actualImage++;
-        if (actualImage > 5) {
-            actualImage = 1;
-        }
-    }, 5000);
+    getParagraphsData().then(() => {
+        setSliderItens(); 
+    })
+    .catch(error => console.log("Paragraph data not loaded: ", error));
 }
 
 function showLoggedIcons() {
@@ -74,4 +94,4 @@ function showSearchTextInput() {
 
 showSearchTextInput();
 //showLoggedIcons();
-//showSliderItens();
+showSliderItens();

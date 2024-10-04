@@ -1,19 +1,29 @@
 {
     "paragraphs" : [
         {
-            "title": "",
-            "subtitle": "",
-            "text": ""
+            "title": "PRIMAVERA Academy",
+            "subtitle": "Juntos seremos mais fortes!",
+            "text": "Aposte em novas competências"
         },
         {
-            "title": "",
-            "subtitle": "",
-            "text": ""
+            "title": "Online Seminar",
+            "subtitle": "Legislação Laboral de A a Z",
+            "text": "Atualize os seus conhecimentos"
         },
         {
-            "title": "",
-            "subtitle": "",
-            "text": ""
+            "title": "RE_Start",
+            "subtitle": "CODE Learning Academy",
+            "text": "Juntos desenvolvemos o teu percurso de sucesso como Developer"
+        },
+        {
+            "title": "Marketing Digital",
+            "subtitle": "Aproveite Desconto 20%",
+            "text": "Virtual Classroom (Online)"
+        },
+        {
+            "title": "Programa SCORE",
+            "subtitle": "Online | Virtual Classroom",
+            "text": "Certifique-se como Profissional PRIMAVERA"
         }
     ]
 }

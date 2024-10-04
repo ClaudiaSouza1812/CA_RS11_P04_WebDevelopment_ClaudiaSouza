@@ -168,6 +168,7 @@ i {
         "b" 
         "c";
         gap: 30px;
+        padding-bottom: 50px;
     }
     #teamSection > #gridTeamSection > section:nth-child(1) {
         grid-area: a;
@@ -181,6 +182,12 @@ i {
         grid-area: c;
         width: max-content;
     }
+    .trainingSection {
+        display: flex;
+        justify-content: center;
+        padding: 0 100px 50px 100px;
+    }
+    
 }
 /* Screens > 801px and < 940px */
 @media (min-width: 800px) and (max-width: 940px) {
@@ -354,32 +361,84 @@ hr {
     margin-top: 0;
 }
 
-
-#trainingImg01 {
+.trainingSection {
     position: relative;
+    max-width: 1400px;
+    height: 500px;
+    overflow: hidden;
+}
+.slide {
+    padding-bottom: 250px;
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    max-height: 500px;
-}
-#trainingTitle {
-    color: white;
-    font-size: 48px;
-    margin: 0;
-}
-#trainingSubtitle {
-    color: #ccc;
-    font-size: 30px;
-    margin: 10px;
-}
-#trainingText {
-    color: white;
-    font-size: 20px;
-    font-style: italic;
-    margin: 10px;
-    padding-bottom: 20px;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    animation: slideShow 25s infinite;
 }
 
+.slide:nth-child(2) { animation-delay: 5s; }
+.slide:nth-child(3) { animation-delay: 10s; }
+.slide:nth-child(4) { animation-delay: 15s; }
+.slide:nth-child(5) { animation-delay: 20s; }
+
+@keyframes slideShow {
+    0%, 20%, 100% { opacity: 0; }
+    4%, 16% { opacity: 1; }
+}
+.trainingImg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.slide p {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    width: 70%;
+}
+.trainingTitle {
+    top: 20%;
+    font-size: 42px;
+}
+.trainingSubtitle {
+    top: 30%;
+    font-size: 35px;
+}
+.trainingText {
+    top: 40%;
+    font-size: 26px;
+}
+.trainingTitle1 {
+    color: #f27d29;
+}
+.trainingSubtitle1 {
+    color: #153c85;
+}
+.trainingText1 {
+    color: #153c85;
+}
+.trainingTitle2, #trainingTitle4 {
+    color: #153c85;
+}
+.trainingTitle3 {
+    color: #ebc711;
+}
+.trainingTitle5 {
+    color: #ff701e;
+}
+.trainingSubtitle2, .trainingSubtitle3, .trainingSubtitle4, .trainingSubtitle5 {
+    color: white;
+}
+.trainingText2, .trainingText3, .trainingText4, .trainingText5{
+    color: white;
+}
 /* 
 
+Todos os sub-títulos e textos são brancos excepto no slide 1 em que é utilizada a cor #153c85.
 */
 
 
