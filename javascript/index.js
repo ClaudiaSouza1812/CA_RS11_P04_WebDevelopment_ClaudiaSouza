@@ -224,7 +224,7 @@ function logOutUser() {
         if (event.target.closest("#logoutIcon")) {
 
             sessionStorage.clear();
-            
+
             console.log(sessionStorage);
             showIcons();
             let userMessage = document.querySelector(".divItens > p");
