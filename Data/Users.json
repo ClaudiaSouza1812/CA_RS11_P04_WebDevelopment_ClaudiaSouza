@@ -7,7 +7,8 @@
             "nome": "Claudia Souza",
             "morada": "Rua Teste, 123",
             "cep": "3040-123",
-            "pais": "Portugal"
+            "pais": "Portugal",
+            "activa": "sim"
         }
     ]
 }
