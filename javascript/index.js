@@ -2,7 +2,27 @@
 const url = "http://127.0.0.1:5501/html/index.html";
 const divIconItens = document.querySelector(".headerItens > div:nth-child(2");
 const sliderItens = document.querySelectorAll(".trainingSection > *");
+const buttons = divIconItens.querySelectorAll("button");
+const menu = document.querySelector("#menu > ul");
+const contactImg = document.querySelector(".contact > section");
+
 let paragraphsData = null;
+
+function showContactNumber() {
+    const contactNumber = document.createElement("p");
+    contactNumber.textContent = "919 204 462";
+    contactNumber.style.display = "none";
+    contactNumber.style.color = "#0acb84";
+    contactNumber.style.fontSize = "12px";
+    contactImg.appendChild(contactNumber);
+
+    contactImg.addEventListener("mouseover", function () {
+        contactNumber.style.display = "block";
+    });
+    contactImg.addEventListener("mouseout", function () {
+        contactNumber.style.display = "none";
+    });
+}
 
 function getParagraphsData() {
     return fetch("../Data/Paragraphs.json")
@@ -40,10 +60,19 @@ function showSliderItens() {
     .catch(error => console.log("Paragraph data not loaded: ", error));
 }
 
-function showLoggedIcons() {
-    const buttons = divIconItens.querySelectorAll("button"); 
+function showLoggedIcons() { 
     buttons[1].innerHTML = `<i class="fa-regular fa-user" title="Perfil"></i>`;
     buttons[2].innerHTML = `<i class="fa-solid fa-arrow-right-from-bracket" title="Logout"></i>`;
+}
+
+function showMenu () {
+    buttons[3].addEventListener("click", function () {
+        if (menu.style.display === "none" || menu.style.display === "") {
+            menu.style.display = "flex";
+        } else if (menu.style.display === "flex") {
+            menu.style.display = "none"
+        }
+    });
 }
 
 function showSearchTextInput() {
@@ -91,7 +120,8 @@ function showSearchTextInput() {
     })
 }
 
-
+showMenu();
+document.addEventListener('DOMContentLoaded', showContactNumber);
 showSearchTextInput();
 //showLoggedIcons();
 showSliderItens();
